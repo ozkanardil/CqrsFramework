@@ -17,7 +17,9 @@ namespace CqrsFramework.Persistance
                                                                 IConfiguration configuration)
         {
             string myConnStr = ApplicationSettings.DbConnString;
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(myConnStr));
+            services.AddDbContext<DatabaseContext>(options => options.UseMySql(myConnStr, 
+                                                                            ServerVersion.AutoDetect(myConnStr),
+                                                                            b=> b.MigrationsAssembly("CqrsFramework.Api")));
             //services.AddScoped<IBrandRepository, BrandRepository>();
             //services.AddScoped<IModelRepository, ModelRepository>();
             //services.AddScoped<IUserRepository, UserRepository>();
