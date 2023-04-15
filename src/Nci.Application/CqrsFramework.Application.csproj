@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nci.Domain\CqrsFramework.Domain.csproj" />
+    <ProjectReference Include="..\Nci.Infrastructure\CqrsFramework.Infrastructure.csproj" />
+    <ProjectReference Include="..\Nci.Persistance\CqrsFramework.Persistance.csproj" />
+  </ItemGroup>
+
+</Project>
