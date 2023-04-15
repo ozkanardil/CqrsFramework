@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nci.Domain\CqrsFramework.Domain.csproj" />
+    <ProjectReference Include="..\CqrsFramework.Domain\CqrsFramework.Domain.csproj" />
   </ItemGroup>
 
 

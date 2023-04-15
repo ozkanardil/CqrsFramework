@@ -21,9 +21,9 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Nci.Domain\CqrsFramework.Domain.csproj" />
-    <ProjectReference Include="..\Nci.Infrastructure\CqrsFramework.Infrastructure.csproj" />
-    <ProjectReference Include="..\Nci.Persistance\CqrsFramework.Persistance.csproj" />
+    <ProjectReference Include="..\CqrsFramework.Domain\CqrsFramework.Domain.csproj" />
+    <ProjectReference Include="..\CqrsFramework.Infrastructure\CqrsFramework.Infrastructure.csproj" />
+    <ProjectReference Include="..\CqrsFramework.Persistance\CqrsFramework.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
