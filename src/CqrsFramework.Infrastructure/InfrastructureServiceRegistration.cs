@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CqrsFramework.Infrastructure.Errors.Middleware;
 using CqrsFramework.Infrastructure.LogEntries;
+using CqrsFramework.Infrastructure.CustomExceptionFilter;
 
 namespace CqrsFramework.Infrastructure
 {
@@ -20,6 +21,7 @@ namespace CqrsFramework.Infrastructure
             services.AddScoped<ExceptionMiddleware>();
 
             services.AddTransient<LogFilter>();
+            services.AddTransient<ExceptionFilter>();
             
             return services;
 

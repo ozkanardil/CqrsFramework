@@ -11,6 +11,7 @@ using CqrsFramework.Infrastructure.Security.JwtToken;
 using Microsoft.OpenApi.Models;
 using CqrsFramework.Infrastructure.LogEntries;
 using CqrsFramework.Persistance.Context;
+using CqrsFramework.Infrastructure.CustomExceptionFilter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +45,7 @@ builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddControllers(config =>
 {
     config.Filters.Add(typeof(LogFilter));
+    config.Filters.Add(typeof(ExceptionFilter));
 });
 
 
