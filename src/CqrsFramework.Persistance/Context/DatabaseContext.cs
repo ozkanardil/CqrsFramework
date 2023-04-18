@@ -34,6 +34,7 @@ namespace CqrsFramework.Persistance.Context
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<OrderItemEntity> OrderItem { get; set; }
         public DbSet<ShoppingCartEntity> ShoppingCart { get; set; }
+        public DbSet<LogEntity> Logs { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -48,6 +49,7 @@ namespace CqrsFramework.Persistance.Context
             modelBuilder.ApplyConfiguration(new OrderEntityConfiguration());
             modelBuilder.ApplyConfiguration(new OrderItemEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ShoppingCartEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new LogEntityConfiguration());
         }
     }
 }

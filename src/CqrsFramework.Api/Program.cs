@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using CqrsFramework.Infrastructure.Security.JwtToken;
 using Microsoft.OpenApi.Models;
+using CqrsFramework.Infrastructure.LogEntries;
+using CqrsFramework.Persistance.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,12 +36,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                   };
               });
 
-builder.Services.AddControllers();
-
 // NOTE: Add services to the container.
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
+
+builder.Services.AddControllers(config =>
+{
+    config.Filters.Add(typeof(LogFilter));
+});
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

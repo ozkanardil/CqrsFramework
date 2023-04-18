@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using CqrsFramework.Infrastructure.Errors.Middleware;
+using CqrsFramework.Infrastructure.LogEntries;
 
 namespace CqrsFramework.Infrastructure
 {
@@ -17,7 +18,8 @@ namespace CqrsFramework.Infrastructure
 
             services.AddScoped<ITokenHelper, JwtHelper>();
             services.AddScoped<ExceptionMiddleware>();
-            
+
+            services.AddTransient<LogFilter>();
             
             return services;
 
