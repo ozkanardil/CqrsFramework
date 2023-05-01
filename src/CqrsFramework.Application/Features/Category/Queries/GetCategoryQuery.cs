@@ -4,12 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using CqrsFramework.Application.Features.Category.Models;
 using CqrsFramework.Persistance.Context;
 using System.Collections.Generic;
+using CqrsFramework.Application.Features.Category.Rules;
 
 namespace CqrsFramework.Application.Features.Category.Queries
 {
     public class GetCategoryQuery:IRequest<IEnumerable<CategoryResponse>>
     {
-
+        public int categoryId { get; set; }
     }
 
     public class GetCategoryQueryHandler : IRequestHandler<GetCategoryQuery, IEnumerable<CategoryResponse>>
@@ -25,6 +26,8 @@ namespace CqrsFramework.Application.Features.Category.Queries
 
         public async Task<IEnumerable<CategoryResponse>> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
         {
+            GetCategoryQueryGuard.Against(request).MustBePositive();
+
             var result = _context.Categories.AsQueryable();
             var response = await result.ToListAsync();
             return _mapper.Map<IEnumerable<CategoryResponse>>(response).ToList();

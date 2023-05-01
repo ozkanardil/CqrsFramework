@@ -1,13 +1,7 @@
 ﻿using AutoMapper;
-using FluentValidation;
 using MediatR;
 using CqrsFramework.Application.Features.Category.Models;
 using CqrsFramework.Persistance.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CqrsFramework.Application.Features.Category.Commands
 {
@@ -19,14 +13,6 @@ namespace CqrsFramework.Application.Features.Category.Commands
         }
 
         public int Id { get; set; }
-    }
-
-    public class DeleteCategoryCommandValidator : AbstractValidator<DeleteCategoryCommand>
-    {
-        public DeleteCategoryCommandValidator()
-        {
-            RuleFor(c => c.Id).NotEmpty();
-        }
     }
 
     public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand, CategoryResponse>

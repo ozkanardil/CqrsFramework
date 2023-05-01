@@ -1,28 +1,14 @@
 ﻿using AutoMapper;
-using FluentValidation;
 using MediatR;
 using CqrsFramework.Application.Features.Category.Models;
 using CqrsFramework.Domain.Entities;
 using CqrsFramework.Persistance.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CqrsFramework.Application.Features.Category.Commands
 {
     public class CreateCategoryCommand:IRequest<CategoryResponse>
     {
         public string Name { get; set; }
-    }
-
-    public class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
-    {
-        public CreateCategoryCommandValidator()
-        {
-            RuleFor(c => c.Name).NotEmpty();
-        }
     }
 
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, CategoryResponse>
