@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
 using CqrsFramework.Application.Features.Order.Commands;
 using CqrsFramework.Application.Features.Order.Models;
-using CqrsFramework.Application.Features.Order.Queries;
 using CqrsFramework.Persistance.Context;
+using CqrsFramework.Tests.Shared;
+using CqrsFramework.Application.Features.Order.Commands;
+using CqrsFramework.Application.Features.Order.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestProject1.Shared;
 
-namespace TestProject1.Features
+namespace CqrsFramework.Tests.Features
 {
     [Collection("TestCollection")]
     public class OrderTests : IDisposable
@@ -65,12 +66,12 @@ namespace TestProject1.Features
             Assert.Equal(3, getResult.Data.Count());
         }
 
-     
+
         [Fact]
         public async Task Get_Order()
         {
             // Arrange
-            var query = new GetOrderQuery{UserId = 1};
+            var query = new GetOrderQuery { UserId = 1 };
             var handler = new GetOrderQueryHandler(_mapper, _context);
 
             // Act

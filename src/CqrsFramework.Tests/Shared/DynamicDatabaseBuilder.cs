@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Moq;
-using CqrsFramework.Domain.Entities;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Domain.Entities;
+using CqrsFramework.Persistance.Context;
 
-namespace TestProject1.Shared
+namespace CqrsFramework.Tests.Shared
 {
     public class DynamicDatabaseBuilder
     {
@@ -64,7 +64,7 @@ namespace TestProject1.Shared
             return context;
         }
 
-     
+
 
     }
 }

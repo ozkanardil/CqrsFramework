@@ -1,19 +1,20 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using CqrsFramework.Application.Features.Category.Commands;
-using CqrsFramework.Application.Features.Category.Models;
 using CqrsFramework.Application.Features.Category.Queries;
 using CqrsFramework.Domain.Entities;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestProject1.Shared;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using CqrsFramework.Application.Features.Category.Commands;
+using CqrsFramework.Application.Features.Category.Models;
+using CqrsFramework.Persistance.Context;
+using CqrsFramework.Tests.Shared;
 
-namespace TestProject1.Features
+namespace CqrsFramework.Tests.Features
 {
     [Collection("TestCollection")]
     public class CategoryTests : IDisposable

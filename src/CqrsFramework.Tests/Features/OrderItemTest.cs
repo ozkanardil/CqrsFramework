@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using CqrsFramework.Application.Features.OrderItem.Queries;
 using CqrsFramework.Persistance.Context;
+using CqrsFramework.Tests.Shared;
+using CqrsFramework.Application.Features.OrderItem.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestProject1.Shared;
 
-namespace TestProject1.Features
+namespace CqrsFramework.Tests.Features
 {
     [Collection("TestCollection")]
     public class OrderItemTests : IDisposable
@@ -28,7 +28,7 @@ namespace TestProject1.Features
             _context.Dispose();
         }
 
-      
+
         [Fact]
         public async Task Get_OrderItem()
         {
@@ -43,6 +43,6 @@ namespace TestProject1.Features
             Assert.Equal(1, result.Data.Count());
         }
 
-     
+
     }
 }

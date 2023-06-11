@@ -9,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestProject1.Shared
+namespace CqrsFramework.Tests.Shared
 {
     public static class MapperBuilder
     {
         public static IMapper CategoryMapper()
         {
-            var mapperConfig = new MapperConfiguration(cfg => {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
                 cfg.AddProfile<CategoryProfile>();
             });
             return mapperConfig.CreateMapper();
@@ -23,7 +24,8 @@ namespace TestProject1.Shared
 
         public static IMapper ProductMapper()
         {
-            var mapperConfig = new MapperConfiguration(cfg => {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
                 cfg.AddProfile<ProductProfile>();
             });
             return mapperConfig.CreateMapper();
@@ -31,7 +33,8 @@ namespace TestProject1.Shared
 
         public static IMapper OrderMapper()
         {
-            var mapperConfig = new MapperConfiguration(cfg => {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
                 cfg.AddProfile<OrderProfile>();
             });
             return mapperConfig.CreateMapper();
@@ -39,7 +42,8 @@ namespace TestProject1.Shared
 
         public static IMapper OrderItemMapper()
         {
-            var mapperConfig = new MapperConfiguration(cfg => {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
                 cfg.AddProfile<OrderItemProfile>();
             });
             return mapperConfig.CreateMapper();
