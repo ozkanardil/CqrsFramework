@@ -6,12 +6,12 @@ namespace CqrsFramework.Infrastructure.Results
 {
     public class RequestDataResult<T> : RequestResult, IRequestDataResult<T>
     {
-        public RequestDataResult(T data,bool success, string message) : base(success, message)
+        public RequestDataResult(T data, bool success, string message) : base(success, message)
         {
             Data = data;
         }
 
-        public RequestDataResult(T data, bool success):base(success)
+        public RequestDataResult(T data, bool success) : base(success)
         {
             Data = data;
         }

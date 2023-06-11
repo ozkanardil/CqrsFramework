@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CqrsFramework.Infrastructure.Results
 {
-    public class RequestResult:IRequestResult
+    public class RequestResult : IRequestResult
     {
-        public RequestResult(bool success, string message):this(success)
+        public RequestResult(bool success, string message) : this(success)
         {
             Message = message;
         }

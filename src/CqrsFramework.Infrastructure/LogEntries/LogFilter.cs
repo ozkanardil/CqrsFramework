@@ -34,7 +34,7 @@ namespace CqrsFramework.Infrastructure.LogEntries
                 logEntity.controller = context.ActionDescriptor.DisplayName;
                 var myParameters = context.ActionArguments;
                 string myParamsForResult = "";
-                logEntity.parameters = myParameters.Aggregate(myParamsForResult, (current, p) => current + (p.Key + ": " + p.Value + Environment.NewLine));
+                logEntity.parameters = myParameters.Aggregate(myParamsForResult, (current, p) => current + p.Key + ": " + p.Value + Environment.NewLine);
             }
         }
         public void OnActionExecuted(ActionExecutedContext context)

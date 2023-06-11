@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CqrsFramework.Infrastructure.Errors
-{  
+{
     public class BusinessException : Exception
     {
         public BusinessException(string message) : base(message)

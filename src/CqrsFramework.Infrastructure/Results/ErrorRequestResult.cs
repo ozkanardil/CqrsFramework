@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CqrsFramework.Infrastructure.Results
 {
-    public class ErrorRequestResult:RequestResult
+    public class ErrorRequestResult : RequestResult
     {
         public ErrorRequestResult(string message) : base(false, message)
         {
