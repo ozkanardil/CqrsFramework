@@ -4,14 +4,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CqrsFramework.Application.Features.Product.Commands;
 using CqrsFramework.Application.Features.Product.Models;
+using CqrsFramework.Application.Features.UserRole.Command;
+using System.Data;
 using CqrsFramework.Application.Features.User.Commands;
 using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Application.Features.User.Queries;
-using CqrsFramework.Application.Features.UserRole.Command;
 using CqrsFramework.Infrastructure.Results;
-using System.Data;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

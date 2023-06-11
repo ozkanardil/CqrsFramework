@@ -2,17 +2,17 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using CqrsFramework.Application.Features.Category.Commands;
-using CqrsFramework.Application.Features.Category.Models;
-using CqrsFramework.Application.Features.Category.Queries;
 using System.Data;
 using System.Security.Claims;
+using CqrsFramework.Application.Features.Category.Commands;
+using CqrsFramework.Application.Features.Category.Queries;
+using CqrsFramework.Application.Features.Category.Models;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-  
+
     public class CategoryController : ControllerBase
     {
         private readonly IMediator _mediator;

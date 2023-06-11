@@ -1,17 +1,17 @@
 using MediatR;
-using CqrsFramework.Application;
 using CqrsFramework.Application.Features.Category.Models;
-using CqrsFramework.Domain.Entities;
-using CqrsFramework.Persistance;
-using CqrsFramework.Infrastructure;
 using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using CqrsFramework.Infrastructure.Security.JwtToken;
 using Microsoft.OpenApi.Models;
-using CqrsFramework.Infrastructure.LogEntries;
 using CqrsFramework.Persistance.Context;
+using CqrsFramework.Application;
+using CqrsFramework.Domain.Entities;
+using CqrsFramework.Infrastructure;
 using CqrsFramework.Infrastructure.CustomExceptionFilter;
+using CqrsFramework.Infrastructure.Security.JwtToken;
+using CqrsFramework.Infrastructure.LogEntries;
+using CqrsFramework.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 

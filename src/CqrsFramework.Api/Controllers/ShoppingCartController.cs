@@ -2,15 +2,15 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using CqrsFramework.Application.Features.ShoppingCart.Commands;
-using CqrsFramework.Application.Features.ShoppingCart.Models;
-using CqrsFramework.Application.Features.ShoppingCart.Queries;
-using CqrsFramework.Infrastructure.Results;
 using System.Data;
 using System.Security.Claims;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using CqrsFramework.Application.Features.ShoppingCart.Queries;
+using CqrsFramework.Application.Features.ShoppingCart.Models;
+using CqrsFramework.Application.Features.ShoppingCart.Commands;
+using CqrsFramework.Infrastructure.Results;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

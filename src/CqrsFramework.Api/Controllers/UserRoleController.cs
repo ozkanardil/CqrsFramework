@@ -6,13 +6,13 @@ using CqrsFramework.Application.Features.Product.Commands;
 using CqrsFramework.Application.Features.User.Commands;
 using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Application.Features.User.Queries;
-using CqrsFramework.Application.Features.UserRole.Command;
-using CqrsFramework.Application.Features.UserRole.Models;
-using CqrsFramework.Application.Features.UserRole.Queries;
-using CqrsFramework.Infrastructure.Results;
 using System.Data;
+using CqrsFramework.Application.Features.UserRole.Command;
+using CqrsFramework.Application.Features.UserRole.Queries;
+using CqrsFramework.Application.Features.UserRole.Models;
+using CqrsFramework.Infrastructure.Results;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

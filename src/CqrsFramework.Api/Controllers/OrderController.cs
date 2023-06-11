@@ -3,14 +3,14 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using CqrsFramework.Application.Features.Order.Commands;
-using CqrsFramework.Application.Features.Order.Models;
-using CqrsFramework.Application.Features.Order.Queries;
-using CqrsFramework.Infrastructure.Results;
 using System.Data;
 using System.Security.Claims;
+using CqrsFramework.Application.Features.Order.Models;
+using CqrsFramework.Application.Features.Order.Commands;
+using CqrsFramework.Application.Features.Order.Queries;
+using CqrsFramework.Infrastructure.Results;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -43,7 +43,7 @@ namespace CqrsFramework.Controllers
         {
             CreateOrderCommand model = _mapper.Map<CreateOrderCommand>(request);
             model.UserId = Convert.ToInt32(User.Claims.Where(a => a.Type == ClaimTypes.NameIdentifier).FirstOrDefault().Value);
-            
+
             var res = await _mediator.Send(model);
             return Ok(res);
         }

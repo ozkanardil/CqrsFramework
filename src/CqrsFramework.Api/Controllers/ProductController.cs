@@ -6,10 +6,11 @@ using CqrsFramework.Application.Features.Category.Commands;
 using CqrsFramework.Application.Features.Category.Models;
 using CqrsFramework.Application.Features.Category.Queries;
 using CqrsFramework.Application.Features.Product.Commands;
-using CqrsFramework.Application.Features.Product.Models;
 using CqrsFramework.Application.Features.Product.Queries;
+using CqrsFramework.Application.Features.Product.Models;
+using CqrsFramework.Application.Features.Product.Commands;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using CqrsFramework.Application.Features.OrderItem.Models;
 using CqrsFramework.Application.Features.OrderItem.Queries;
 using CqrsFramework.Infrastructure.Results;
-using System.Data;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

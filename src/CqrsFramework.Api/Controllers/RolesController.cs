@@ -2,14 +2,14 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using CqrsFramework.Application.Features.Role.Models;
-using CqrsFramework.Application.Features.Role.Queries;
 using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Application.Features.User.Queries;
-using CqrsFramework.Infrastructure.Results;
 using System.Data;
+using CqrsFramework.Application.Features.Role.Models;
+using CqrsFramework.Application.Features.Role.Queries;
+using CqrsFramework.Infrastructure.Results;
 
-namespace CqrsFramework.Controllers
+namespace CqrsFramework.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
