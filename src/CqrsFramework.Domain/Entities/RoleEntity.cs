@@ -1,5 +1,4 @@
-﻿
-namespace CqrsFramework.Domain.Entities
+﻿namespace CqrsFramework.Domain.Entities
 {
     public class RoleEntity
     {
