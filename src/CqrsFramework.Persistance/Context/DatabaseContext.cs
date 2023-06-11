@@ -2,11 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using CqrsFramework.Domain.Entities;
 using CqrsFramework.Persistance.Configurations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CqrsFramework.Persistance.Context
 {
@@ -14,8 +9,8 @@ namespace CqrsFramework.Persistance.Context
     {
         protected IConfiguration Configuration { get; set; }
 
-        public DatabaseContext(DbContextOptions dbContextOptions, 
-                                IConfiguration configuration) 
+        public DatabaseContext(DbContextOptions dbContextOptions,
+                                IConfiguration configuration)
                             : base(dbContextOptions)
         {
             Configuration = configuration;

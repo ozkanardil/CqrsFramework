@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using CqrsFramework.Domain.Entities;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Domain.Entities;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Persistance
 {
@@ -17,9 +17,9 @@ namespace CqrsFramework.Persistance
                                                                 IConfiguration configuration)
         {
             string myConnStr = ApplicationSettings.DbConnString;
-            services.AddDbContext<DatabaseContext>(options => options.UseMySql(myConnStr, 
+            services.AddDbContext<DatabaseContext>(options => options.UseMySql(myConnStr,
                                                                             ServerVersion.AutoDetect(myConnStr),
-                                                                            b=> b.MigrationsAssembly("CqrsFramework.Api")));
+                                                                            b => b.MigrationsAssembly("CqrsFramework.Api")));
             //services.AddScoped<IBrandRepository, BrandRepository>();
             //services.AddScoped<IModelRepository, ModelRepository>();
             //services.AddScoped<IUserRepository, UserRepository>();

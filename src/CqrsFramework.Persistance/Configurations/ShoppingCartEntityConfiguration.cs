@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using CqrsFramework.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Domain.Entities;
 
 namespace CqrsFramework.Persistance.Configurations
 {
@@ -21,7 +21,7 @@ namespace CqrsFramework.Persistance.Configurations
             builder.Property(u => u.Quantity).IsRequired();
             builder.Property(u => u.Price).IsRequired();
             builder.Property(u => u.AddDate).IsRequired();
-            builder.HasOne(p =>p.Product).WithMany(c => c.ShoppingCart).HasForeignKey(p => p.ProductId);
+            builder.HasOne(p => p.Product).WithMany(c => c.ShoppingCart).HasForeignKey(p => p.ProductId);
         }
     }
 }
