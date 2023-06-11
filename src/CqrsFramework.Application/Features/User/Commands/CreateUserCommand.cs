@@ -2,21 +2,21 @@
 using MediatR;
 using CqrsFramework.Application.Features.Product.Commands;
 using CqrsFramework.Application.Features.Product.Models;
-using CqrsFramework.Application.Features.User.Constants;
-using CqrsFramework.Application.Features.User.Models;
-using CqrsFramework.Domain.Entities;
-using CqrsFramework.Infrastructure.Results;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.User.Constants;
+using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Application.Features.User.Rules;
+using CqrsFramework.Domain.Entities;
+using CqrsFramework.Infrastructure.Results;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.User.Commands
 {
-    public class CreateUserCommand: UserModel, IRequest<IRequestResult>
+    public class CreateUserCommand : UserModel, IRequest<IRequestResult>
     {
     }
 
@@ -24,8 +24,8 @@ namespace CqrsFramework.Application.Features.User.Commands
     {
         private readonly DatabaseContext _context;
         private readonly IMapper _mapper;
-        
-        public CreateUserCommandHandler(IMapper mapper, 
+
+        public CreateUserCommandHandler(IMapper mapper,
                                         DatabaseContext context)
         {
             _mapper = mapper;
@@ -43,8 +43,8 @@ namespace CqrsFramework.Application.Features.User.Commands
             user.Status = 1;
             _context.User.Add(user);
             int numAffectedRecords = await _context.SaveChangesAsync(cancellationToken);
-            
-            if(numAffectedRecords == 0)
+
+            if (numAffectedRecords == 0)
                 return new ErrorRequestResult(Messages.UserAddError);
 
             return new SuccessRequestResult(Messages.UserAddSuccess);

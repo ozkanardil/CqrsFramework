@@ -28,7 +28,7 @@ namespace CqrsFramework.Application.Features.Category.Commands
 
         public async Task<CategoryResponse> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
         {
-            var category = _context.Categories.SingleOrDefault(c=>c.Id==request.Id);
+            var category = _context.Categories.SingleOrDefault(c => c.Id == request.Id);
             _context.Categories.Remove(category);
             _context.SaveChanges();
             return _mapper.Map<CategoryResponse>(category);

@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
-using CqrsFramework.Application.Features.Order.Models;
-using CqrsFramework.Domain.Entities;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.Order.Models;
+using CqrsFramework.Domain.Entities;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Order.Commands
 {
@@ -39,7 +39,7 @@ namespace CqrsFramework.Application.Features.Order.Commands
 
             _context.Orders.Add(order);
             await _context.SaveChangesAsync(cancellationToken);
-            
+
             AddCartItemsToOrderItem(request.UserId, order.Id);
             RemoveItemsFromCart(request.UserId);
             _context.SaveChanges();
@@ -49,22 +49,22 @@ namespace CqrsFramework.Application.Features.Order.Commands
         private void AddCartItemsToOrderItem(int pUserId, int pOrderId)
         {
             var cartEntities = _context.ShoppingCart.Where(ci => ci.UserId == pUserId).ToList();
-            
+
             OrderItemEntity[] orderItemAddRangeModel = new OrderItemEntity[cartEntities.Count];
             int counter = 0;
             foreach (var item in cartEntities)
             {
                 orderItemAddRangeModel[counter] = new OrderItemEntity
                 {
-                 OrderId = pOrderId,
-                 Price = item.Price,
-                 ProductId = item.ProductId,
-                 Quantity = item.Quantity,
+                    OrderId = pOrderId,
+                    Price = item.Price,
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
                 };
                 counter++;
             }
             _context.OrderItem.AddRange(orderItemAddRangeModel);
-           
+
         }
 
         private void RemoveItemsFromCart(int pUserId)

@@ -17,12 +17,8 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
-
-
   <ItemGroup>
-    <ProjectReference Include="..\CqrsFramework.Domain\CqrsFramework.Domain.csproj" />
     <ProjectReference Include="..\CqrsFramework.Infrastructure\CqrsFramework.Infrastructure.csproj" />
-    <ProjectReference Include="..\CqrsFramework.Persistance\CqrsFramework.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

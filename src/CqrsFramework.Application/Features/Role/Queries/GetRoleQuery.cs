@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CqrsFramework.Application.Features.Role.Constants;
-using CqrsFramework.Application.Features.Role.Models;
 using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Infrastructure.Results;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.Role.Models;
+using CqrsFramework.Application.Features.Role.Constants;
+using CqrsFramework.Infrastructure.Results;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Role.Queries
 {

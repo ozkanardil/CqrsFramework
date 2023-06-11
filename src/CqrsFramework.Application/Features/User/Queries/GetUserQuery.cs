@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using CqrsFramework.Infrastructure.Results;
 using CqrsFramework.Application.Features.User.Constants;
 using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Infrastructure.Results;
@@ -28,7 +29,7 @@ namespace CqrsFramework.Application.Features.User.Queries
             var result = await _context.User.Where(u => u.Status == 1).ToListAsync();
             var response = _mapper.Map<IEnumerable<UserResponse>>(result);
 
-            if(!response.Any())
+            if (!response.Any())
                 return new ErrorRequestDataResult<IEnumerable<UserResponse>>(response, Messages.UserNoRecord);
 
             return new SuccessRequestDataResult<IEnumerable<UserResponse>>(response, Messages.UserListed); ;

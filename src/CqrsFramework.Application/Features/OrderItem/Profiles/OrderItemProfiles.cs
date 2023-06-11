@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using CqrsFramework.Application.Features.Order.Commands;
-using CqrsFramework.Application.Features.Order.Models;
 using CqrsFramework.Application.Features.OrderItem.Models;
 using CqrsFramework.Domain.Entities;
+using CqrsFramework.Application.Features.Order.Commands;
+using CqrsFramework.Application.Features.Order.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

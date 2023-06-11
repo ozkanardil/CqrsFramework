@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CqrsFramework.Application.Features.Auth.Constants;
 using CqrsFramework.Application.Features.Auth.Models;
 using CqrsFramework.Application.Features.UserRole.Models;
-using CqrsFramework.Domain.Entities;
-using CqrsFramework.Infrastructure.Results;
+using CqrsFramework.Application.Features.Auth.Constants;
 using CqrsFramework.Infrastructure.Security.JwtToken;
+using CqrsFramework.Infrastructure.Results;
 using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Auth.Queries
@@ -36,7 +35,7 @@ namespace CqrsFramework.Application.Features.Auth.Queries
             if (user == null)
                 return new ErrorRequestDataResult<LoginResponse>(null, Messages.UserNotFound);
 
-            var userClaims = await _context.UserRole.Where(ur => ur.UserId == user.Id).Include(r=>r.Role).ToListAsync();
+            var userClaims = await _context.UserRole.Where(ur => ur.UserId == user.Id).Include(r => r.Role).ToListAsync();
             var claims = _mapper.Map<List<UserRoleDto>>(userClaims);
 
             var token = _tokenHelper.CreateToken(user, claims);

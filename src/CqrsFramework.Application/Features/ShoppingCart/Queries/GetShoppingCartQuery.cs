@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CqrsFramework.Application.Features.ShoppingCart.Constants;
+using CqrsFramework.Infrastructure.Results;
 using CqrsFramework.Application.Features.ShoppingCart.Models;
+using CqrsFramework.Application.Features.ShoppingCart.Constants;
 using CqrsFramework.Infrastructure.Results;
 using CqrsFramework.Persistance.Context;
-
 
 namespace CqrsFramework.Application.Features.ShoppingCart.Queries
 {
@@ -27,7 +27,7 @@ namespace CqrsFramework.Application.Features.ShoppingCart.Queries
         public async Task<IRequestDataResult<IEnumerable<ShoppingCartResponse>>> Handle(GetShoppingCartQuery request, CancellationToken cancellationToken)
         {
             int userId = request.UserId;
-            var result = await _context.ShoppingCart.Where(sc => sc.UserId == userId).Include(p=>p.Product).ToListAsync();
+            var result = await _context.ShoppingCart.Where(sc => sc.UserId == userId).Include(p => p.Product).ToListAsync();
             var response = _mapper.Map<IEnumerable<ShoppingCartResponse>>(result);
 
             if (!response.Any())

@@ -14,7 +14,7 @@ namespace CqrsFramework.Application.Features.Auth.Models
         public List<UserRoleResponse> Roles { get; set; }
     }
 
-    public class TokenResult: AccessToken
+    public class TokenResult : AccessToken
     {
         public string refreshToken { get; set; }
     }

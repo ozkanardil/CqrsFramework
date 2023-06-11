@@ -26,7 +26,7 @@ namespace CqrsFramework.Application.Features.UserRole.Command
         }
         public async Task<IRequestResult> Handle(CreateUserRoleCommand request, CancellationToken cancellationToken)
         {
-            var user = _context.User.Where(u=>u.Email == request.userEmailAdd).FirstOrDefault();
+            var user = _context.User.Where(u => u.Email == request.userEmailAdd).FirstOrDefault();
             UserRoleEntity roleEntity = new UserRoleEntity();
             roleEntity.RoleId = request.userRoleIdAdd;
             roleEntity.UserId = user.Id;

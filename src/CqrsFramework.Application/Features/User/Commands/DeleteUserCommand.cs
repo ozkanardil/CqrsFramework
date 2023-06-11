@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using MediatR;
 using CqrsFramework.Application.Features.Product.Models;
-using CqrsFramework.Application.Features.User.Constants;
 using CqrsFramework.Application.Features.User.Models;
 using CqrsFramework.Domain.Entities;
-using CqrsFramework.Infrastructure.Results;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.User.Constants;
+using CqrsFramework.Infrastructure.Results;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.User.Commands
 {
@@ -33,8 +33,8 @@ namespace CqrsFramework.Application.Features.User.Commands
         public async Task<IRequestResult> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
         {
             var user = _context.User.SingleOrDefault(u => u.Id == request.Id);
-            
-            if(user == null)
+
+            if (user == null)
                 return new ErrorRequestResult(Messages.UserNotFound);
 
             user.Status = 0;

@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CqrsFramework.Application.Features.Category.Models;
-using CqrsFramework.Persistance.Context;
 using System.Collections.Generic;
 using CqrsFramework.Application.Features.Category.Rules;
+using CqrsFramework.Application.Features.Category.Models;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Category.Queries
 {
-    public class GetCategoryQuery:IRequest<IEnumerable<CategoryResponse>>
+    public class GetCategoryQuery : IRequest<IEnumerable<CategoryResponse>>
     {
         public int categoryId { get; set; }
     }

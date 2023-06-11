@@ -3,13 +3,13 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using CqrsFramework.Application.Features.Category.Models;
 using CqrsFramework.Application.Features.Category.Queries;
-using CqrsFramework.Application.Features.Product.Models;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.Product.Models;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Product.Queries
 {
@@ -34,7 +34,7 @@ namespace CqrsFramework.Application.Features.Product.Queries
             var result = _context.Products.AsQueryable();
             var response = await result.ToListAsync();
             return _mapper.Map<IEnumerable<ProductResponse>>(response).ToList();
-             
+
         }
     }
 }

@@ -2,13 +2,13 @@
 using MediatR;
 using CqrsFramework.Application.Features.Category.Commands;
 using CqrsFramework.Application.Features.Category.Models;
-using CqrsFramework.Application.Features.Product.Models;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.Product.Models;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Product.Commands
 {

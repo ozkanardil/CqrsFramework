@@ -11,7 +11,7 @@ namespace CqrsFramework.Application.Features.Auth.Profiles
         public AuthProfile()
         {
             CreateMap<UserRoleVEntity, UserRoleResponse>().ReverseMap();
-            
+
             CreateMap<AccessToken, TokenResult>().ReverseMap();
 
             CreateMap<UserRoleEntity, RoleEntity>().ReverseMap();

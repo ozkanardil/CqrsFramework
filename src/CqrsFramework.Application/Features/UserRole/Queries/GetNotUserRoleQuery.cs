@@ -1,15 +1,16 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CqrsFramework.Application.Features.Role.Constants;
-using CqrsFramework.Application.Features.Role.Models;
 using CqrsFramework.Infrastructure.Results;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.Role.Models;
+using CqrsFramework.Application.Features.Role.Constants;
+using CqrsFramework.Infrastructure.Results;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.UserRole.Queries
 {
@@ -33,7 +34,7 @@ namespace CqrsFramework.Application.Features.UserRole.Queries
             var selectedUser = await _context.User.FirstOrDefaultAsync(u => u.Email == request.userEmail);
 
             if (selectedUser == null)
-                return new SuccessRequestDataResult<IEnumerable<RoleResponse>> (null, Messages.RolesListError);
+                return new SuccessRequestDataResult<IEnumerable<RoleResponse>>(null, Messages.RolesListError);
 
             var userResult = from userOperationClaim in _context.UserRoleV
                              where userOperationClaim.UserId == selectedUser.Id

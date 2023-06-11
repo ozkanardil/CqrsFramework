@@ -2,15 +2,16 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using CqrsFramework.Application.Features.Order.Models;
-using CqrsFramework.Application.Features.OrderItem.Constants;
-using CqrsFramework.Application.Features.OrderItem.Models;
 using CqrsFramework.Infrastructure.Results;
-using CqrsFramework.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CqrsFramework.Application.Features.OrderItem.Models;
+using CqrsFramework.Application.Features.OrderItem.Constants;
+using CqrsFramework.Infrastructure.Results;
+using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.OrderItem.Queries
 {
@@ -31,7 +32,7 @@ namespace CqrsFramework.Application.Features.OrderItem.Queries
         }
         public async Task<IRequestDataResult<IEnumerable<OrderItemResponse>>> Handle(GetOrderItemQuery request, CancellationToken cancellationToken)
         {
-            var result = await _context.OrderItem.Where(oi => oi.OrderId == request.OrderId).Include(t=>t.Product).ToListAsync();
+            var result = await _context.OrderItem.Where(oi => oi.OrderId == request.OrderId).Include(t => t.Product).ToListAsync();
             var response = _mapper.Map<IEnumerable<OrderItemResponse>>(result);
 
             if (!response.Any())

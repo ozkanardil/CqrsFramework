@@ -6,7 +6,7 @@ using CqrsFramework.Persistance.Context;
 
 namespace CqrsFramework.Application.Features.Category.Commands
 {
-    public class CreateCategoryCommand:IRequest<CategoryResponse>
+    public class CreateCategoryCommand : IRequest<CategoryResponse>
     {
         public string Name { get; set; }
     }
